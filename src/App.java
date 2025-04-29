@@ -16,6 +16,9 @@ public class App {
 
         /// Anotar en cada metodo el error encontrado y como lo cambio en TEXTO
 
+        Benchmarking benchmarking = new Benchmarking();
+
+/*
         // Metodo burbujaTradicional
         int[] arregloBurbujaOrdenado1 = ordenador.burbujaTradicional(arregloBurbuja);
         System.out.println(
@@ -77,6 +80,6 @@ public class App {
          System.out.println(
          "Resultado selección Metodo 1: " +
          java.util.Arrays.toString(arregloInsercionOrdenado3));
-
+*/
     }
 }
