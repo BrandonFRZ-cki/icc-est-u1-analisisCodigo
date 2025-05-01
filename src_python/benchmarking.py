@@ -4,8 +4,10 @@ from metodos_ordenamiento import MetodosOrdenamiento
 class Benchmarking:
     def __init__(self):
         print("Bench inicializando !!!")
+    
+    def ejemplo(self):
         self.mOrdenamiento = MetodosOrdenamiento()
-        arreglo = self.build_arreglo(50000)
+        arreglo = self.build_arreglo(100)
         tarea = lambda: self.mOrdenamiento.sortByBubble(arreglo)
         tiempoMillis = self.contar_con_current_time(tarea)
         tiempoNano = self.contar_con_nano_time(tarea)
@@ -13,9 +15,9 @@ class Benchmarking:
         print(f'Tiempo \n\tMillis {tiempoMillis} \n\tNano {tiempoNano}')
 
     
-    def build_arreglo(self, size):
+    def build_arreglo(self, tam):
         array = []
-        for i in range(size):
+        for i in range(tam):
             numero = random.randint(0,99999)
             array.append(numero)
         return array
@@ -30,4 +32,10 @@ class Benchmarking:
         tarea()
         fin = time.time_ns()
         return (fin - inicio)/1000000000.0
+    
+    def medir_tiempo(self,tarea,array):
+        inicio = time.perf_counter()
+        tarea(array)
+        fin = time.perf_counter()
+        return fin-inicio
         
