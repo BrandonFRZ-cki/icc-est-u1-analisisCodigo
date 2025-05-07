@@ -41,12 +41,16 @@ if __name__ == "__main__":
         tiempos_by_metodo[nombre].append(tiempo)
 
     # Crear una gráfica
-    plt.figure(figsize=(10, 6))
+    fig = plt.figure(figsize=(10, 6))
 
     # Gráfica de tiempos para cada método
     for nombre, tiempo in tiempos_by_metodo.items():
         plt.plot(tamanios, tiempo, label=nombre, marker='o')
-
+    
+    plt.title("Comparativa de metodos\nBrandon Rivera 7-5-2025 8:51")
+    plt.xlabel("Tiempos Obtenidos")
+    plt.ylabel("Tamanios Arreglo")
+    fig.canvas.manager.set_window_title("Brandon Rivera 7-5-2025 8:51")
     plt.grid()
     plt.legend()
     plt.show()
